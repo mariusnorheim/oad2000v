@@ -6,18 +6,18 @@ import model.Ansatt;
 
 public class AnsattTableModel extends AbstractTableModel
 {
-    private final List<Ansatt> ansattList;
+    private final List<Ansatt> ansattListe;
 
     private final String[] columnNames = new String[] {
             "Id", "Navn", "Timelønn", "Avdeling"
     };
     private final Class[] columnClass = new Class[] {
-            Integer.class, String.class, Double.class, Boolean.class
+            Integer.class, String.class, Double.class, Integer.class
     };
 
-    public EmployeeTableModel(List<Ansatt> employeeList)
+    public AnsattTableModel(List<Ansatt> ansattListe)
     {
-        this.employeeList = employeeList;
+        this.ansattListe = ansattListe;
     }
 
     @Override
@@ -41,24 +41,24 @@ public class AnsattTableModel extends AbstractTableModel
     @Override
     public int getRowCount()
     {
-        return employeeList.size();
+        return ansattListe.size();
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
-        Employee row = employeeList.get(rowIndex);
+        Ansatt row = ansattListe.get(rowIndex);
         if(0 == columnIndex) {
             return row.getId();
         }
         else if(1 == columnIndex) {
-            return row.getName();
+            return row.getNavn();
         }
         else if(2 == columnIndex) {
-            return row.getHourlyRate();
+            return row.getTimeLonn();
         }
         else if(3 == columnIndex) {
-            return row.isPartTime();
+            return row.getAvdeling();
         }
         return null;
     }

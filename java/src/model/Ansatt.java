@@ -45,7 +45,7 @@ public class Ansatt
         this.timeLonn = timeLonn;
     }
 
-    public boolean getAvdeling()
+    public int getAvdeling()
     {
         return avdeling;
     }
