@@ -21,13 +21,6 @@ public class AnsattTableModel extends AbstractTableModel
         this.ansattListe = ansattListe;
     }
 
-    // Overstyr getColumnName fra AbstractTableModel
-    @Override
-    public String getColumnName(int column)
-    {
-        return columnNames[column];
-    }
-
     // Overstyr getColumnClass fra AbstractTableModel
     @Override
     public Class<?> getColumnClass(int columnIndex)
@@ -42,6 +35,13 @@ public class AnsattTableModel extends AbstractTableModel
         return columnNames.length;
     }
 
+    // Overstyr getColumnName fra AbstractTableModel
+    @Override
+    public String getColumnName(int column)
+    {
+        return columnNames[column];
+    }
+
     // Overstyr getRowCount fra AbstractTableModel
     @Override
     public int getRowCount()
@@ -53,19 +53,20 @@ public class AnsattTableModel extends AbstractTableModel
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
-        Ansatt row = ansattListe.get(rowIndex);
-        if(0 == columnIndex) {
-            return row.getId();
+        Ansatt data = ansattListe.get(rowIndex);
+        if(columnIndex == 0) {
+            return data.getId();
         }
-        else if(1 == columnIndex) {
-            return row.getNavn();
+        else if(columnIndex == 1) {
+            return data.getNavn();
         }
-        else if(2 == columnIndex) {
-            return row.getTimeLonn();
+        else if(columnIndex == 2) {
+            return data.getTimeLonn();
         }
-        else if(3 == columnIndex) {
-            return row.getAvdeling();
+        else if(columnIndex == 3) {
+            return data.getAvdeling();
         }
+
         return null;
     }
 
@@ -73,18 +74,18 @@ public class AnsattTableModel extends AbstractTableModel
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex)
     {
-        Ansatt row = ansattListe.get(rowIndex);
-        if(0 == columnIndex) {
-            row.setId((Integer) aValue);
+        Ansatt data = ansattListe.get(rowIndex);
+        if(columnIndex == 0) {
+            data.setId((Integer) aValue);
         }
-        else if(1 == columnIndex) {
-            row.setNavn((String) aValue);
+        else if(columnIndex == 1) {
+            data.setNavn((String) aValue);
         }
-        else if(2 == columnIndex) {
-            row.setTimeLonn((Double) aValue);
+        else if(columnIndex == 2) {
+            data.setTimeLonn((Double) aValue);
         }
-        else if(3 == columnIndex) {
-            row.setAvdeling((Integer) aValue);
+        else if(columnIndex == 3) {
+            data.setAvdeling((Integer) aValue);
         }
     }
 

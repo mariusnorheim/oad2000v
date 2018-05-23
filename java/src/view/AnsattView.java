@@ -7,8 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 
-import model.AnsattTableModel;
-import model.Ansatt;
+import model.*;
 
 public class AnsattView extends JFrame
 {
@@ -26,7 +25,7 @@ public class AnsattView extends JFrame
         ansattListe.add(rad3);
         ansattListe.add(rad4);
 
-        // Lag modellen med datasettet
+        // Fyll ut modellen med datasettet
         AnsattTableModel model = new AnsattTableModel(ansattListe);
 
         // Lag tabellen og legg til vinduet
@@ -39,6 +38,7 @@ public class AnsattView extends JFrame
         this.setVisible(true);
     }
 
+    // Entry point
     public static void main(String[] args)
     {
         SwingUtilities.invokeLater(new Runnable() {
