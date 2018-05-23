@@ -1,7 +1,6 @@
 package view;
 
 import javax.swing.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
@@ -33,7 +32,7 @@ public class AnsattView extends JFrame
         JTable table = new JTable(model);
         this.add(new JScrollPane(table));
 
-        this.setTitle("Editable Table Example");
+        this.setTitle("Ansatte - AbstractTableModel eksempel");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
