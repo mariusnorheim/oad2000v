@@ -15,6 +15,7 @@ public class Ansatt
         this.avdeling = avdeling;
     }
 
+    // Getters og setters for alle modellfelt
     public int getId()
     {
         return id;
@@ -30,7 +31,7 @@ public class Ansatt
         return navn;
     }
 
-    public void setNavn(String name)
+    public void setNavn(String navn)
     {
         this.navn = navn;
     }
