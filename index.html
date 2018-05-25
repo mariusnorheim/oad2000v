@@ -25,6 +25,7 @@
 								<a class="dropdown-item" href="#intro">Innledning</a>
 								<a class="dropdown-item" href="#atm">AbstractTableModel</a>
 								<a class="dropdown-item" href="#implementeringer">Andre implementeringer</a>
+								<a class="dropdown-item" href="#referanser">Referanser</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="MEDLEMMER.html" target="_self">Medlemmer</a>
 							</div>
@@ -69,7 +70,7 @@
 				<p>
 					Utover de tre operasjonene vi alltid må implementere i AbstractTableModel kan vi benytte oss av mer funksjonalitet ved å overstyre standardimplementering av følgende operasjoner
 				</p>
-				<a href="diagrammer/ansatt-app-model.svg"><img src="diagrammer/ansatt-app-model.svg" alt="Klassediagram"></a>
+				<a href="diagrammer/ansatt-app-model.svg" target="_blank"><img src="diagrammer/ansatt-app-model.svg" alt="Klassediagram"></a>
 				<p>
 					- <strong>getColumnClass</strong><br/>
 					Brukes for å sette datatyper for kolonner i modellen. Dette kan vi bruke til å sette restriksjoner på hva brukeren kan taste inn i felt hvis det er meningen at man skal kunne endre eller sette nye verdier fra tabellen. F.eks går det ikke an å sette inn en stringverdi i int eller double felt i java eksempelet vedlagt i oppgaven<br/>
@@ -84,11 +85,23 @@
 
 			<section>
 				<h1 id="sekvensdiagram">Sekvensdiagram</h1>
-				<a href="diagrammer/Sequence_Diagram.svg"><img src="diagrammer/Sequence_Diagram.svg" alt="Sekvensdiagram"></a>
+				<a href="diagrammer/Sequence_Diagram.svg" target="_blank"><img src="diagrammer/Sequence_Diagram.svg" alt="Sekvensdiagram"></a>
 				<p>
 								 Dette diagramet er et sekvensdiagram som viser hvordan JTable kaller på de to abstrakte metodene(getRowCount(),getColumnCount()).
 								 Disse metodene skal finne indexene for eksisterende antall rader og kolonner. Deretter kaller JTable på den siste abstrakte metoden der verdiene fra columnindex og rowindex blir puttet inn i getValueAt-metoden.
 								 getValue vil da returnere med objektet fra den spesifiserte cellen.
+				</p>
+			</section>
+
+			<section>
+				<h1 id="referanser">Referanser</h1>
+				<p>
+					<ul>
+						<li><a href="https://books.google.no/books?id=HkjPKx_rU5AC&pg=PA20&lpg=PA20&dq=abstracttablemodel&source=bl&ots=pzvm1BGV8x&sig=v0OezZHf_HAFZ1zvH_XE3H30hbM&hl=no&sa=X&ved=0ahUKEwiP9pTdw57bAhWEhaYKHRmWAyk4PBDoAQhuMAk#v=onepage&q=abstracttablemodel&f=false" target="_blank">Gregory D. Speegle (2002), JDBC - Practical Guide for Java Programmers, side 20</a></li>
+						<li><a href="https://stackoverflow.com/questions/9845800/abstracttablemodel-tutorial" target="_blank">Stackoverflow tråd om AbstractTableModel</a></li>
+						<li><a href="https://docs.oracle.com/javase/7/docs/api/" target="_blank">Oracle sin side, docs.oracle.com</a></li>
+						<li>Viggo Holmstedt (2015), Objektorientert systemutvikling og UML, side 288-290</li>
+					</ul>
 				</p>
 			</section>
 
