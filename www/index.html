@@ -10,9 +10,8 @@
 	</head>
 
 	<body>
-		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-			
+
 				<a href="index.html" class="navbar-brand">Eksamen OAD2000V</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" ariacontrols="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -24,63 +23,67 @@
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meny</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="#intro">Innledning</a>
-								<a class="dropdown-item" href="#anker1">anker1</a>
-								<a class="dropdown-item" href="#anker2">anker2</a>
-								<a class="dropdown-item" href="#anker3">anker3</a>
+								<a class="dropdown-item" href="#atm">AbstractTableModel</a>
+								<a class="dropdown-item" href="#implementeringer">Andre implementeringer</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="MEDLEMMER.html" target="_self">Medlemmer</a>
 							</div>
 						</li>
 					</ul>
-				</div>		
+				</div>
 			</nav>
-		</div>
-			
+
 		<div class="container">
 			<section>
-				<h1 id="intro">Innledning</h1>
+				<h1 id="intro">OAD2000V - 2018</h1>
 				<h2 class="lead">Gruppeeksamen i Objektorientert analyse og design våren 2018.</h2>
-
-				<p>Oppgaven går ut på å bruke UML sammen med tekstlige forklaringer til å sette uøvde programutviklerer inn i bruken av AbstractTableModel. Vi skal også gå grundigere til verks og utdype om AbstractTableModel, for at også erfarne utviklere skal kunne lære mer.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>
+					Oppgaven går ut på å bruke UML sammen med tekstlige forklaringer til å sette uøvde programutviklerer inn i bruken av AbstractTableModel. Vi skal også gå grundigere til verks og utdype om AbstractTableModel, for at også erfarne utviklere skal kunne lære mer.
+				</p>
 			</section>
 
 			<section>
-				<h1 id="anker1">Overskrift</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-				<a href="img/sam.jpg" target="_blank"><img class="resize" src="img/sam.jpg" alt="Tha king!"></a>
+				<h1 id="atm">AbstractTableModel</h1>
+				<p>
+					For å forstå hvordan AbstractTableModel brukes, skal vi starte med å forklare klassen JTable og hva den gjør.
+					JTable er en del av Swing-rammeverket og brukes til å lage brukergrensesnitt som presenterer data i ett to dimensjonalt tabellformat. Utseendet til JTable er kontrollert av TableModel grensesnittet.
+					Grensesnittet inkluderer metoder for å sette antall kolonner og antall rader i tabellen og bestemme verdien og klassen av hvert element i tabellen.<br/><br/>
+					AbstractTableModel er en abstrakt klasse. Denne abstrakte klassen gir standard implementeringer for de fleste av operasjonene i TableModel grensesnittet.
+					Det tar hånd om styringen av Listeners og gjør det lettere å generere TableModelEvents og sende dem til Listeners.
+				</p>
+				<p>
+					AbstractTableModel klassen er abstrakt fordi den implementerer TableModel grensesnittet, men den oppfyller ikke hele kontrakten.
+					Swing Rammeverket baserer seg på kontrakter som sender meldinger når data er klare. Tre av operasjonene er abstrakte, og må fylles for å fullføre kontrakten.
+					De tre operasjonene vi alltid må implementere når vi utvider AbstractTableModel klassen er: getRowCount(), getColumnCount(), og getValueAt().<br/><br/>
+					- <strong>getRowCount</strong><br/>
+					Returnerer antall rader i tabellen<br/>
+					- <strong>getColumnCount</strong><br/>
+					Returnerer antall kolonner i tabellen<br/>
+					- <strong>getValueAt</strong><br/>
+					Returnerer objektetene som skal bli vist i de forskjellige radene og kolonnene.
+				</p>
+				<p>
+					<br/><br/><a href="img/sam.jpg" target="_blank"><img class="resize" src="img/sam.jpg" alt="Tha king!"></a>
+				</p>
 			</section>
 
 			<section>
-				<h1 id="anker2">Overskrift</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h1 id="implementeringer">Andre implementeringer</h1>
+				<p>
+					Utover de tre operasjonene vi alltid må implementere i AbstractTableModel kan vi benytte oss av mer funksjonalitet ved å overstyre standardimplementering av følgende operasjoner
+				</p>
+				<p>
+					- <strong>getColumnClass</strong><br/>
+					Brukes for å sette datatyper for kolonner i modellen. Dette kan vi bruke til å sette restriksjoner på hva brukeren kan taste inn i felt hvis det er meningen at man skal kunne endre eller sette nye verdier fra tabellen. F.eks går det ikke an å sette inn en stringverdi i int eller double felt i java eksempelet vedlagt i oppgaven<br/>
+					- <strong>getColumnName</strong><br/>
+					Brukes for å sette semantiske visningsnavn på de forskjellige kolonnene<br/>
+					- <strong>setValueAt</strong><br/>
+					Brukes på samme måte som getValueAt, men istedefor å vise verdiene setter den nye<br/>
+					- <strong>isCellEditable</strong><br/>
+					Denne operasjonen er som standard stilt til false, og vi må overstyre til true for å la brukeren forandre data i feltene
+				</p>
 			</section>
 
-			<section>
-				<h1 id="anker3">Overskrift</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</section>
 			<footer>
 				<div>
 					<a href="#top">Til toppen</a>
@@ -90,7 +93,7 @@
 
 		<script src="scripts/js/custom.js"></script>
 		<script src="scripts/jquery/jquery.min.js"></script>
-	    <script src="scripts/js/bootstrap.bundle.min.js"></script>
+	  <script src="scripts/js/bootstrap.bundle.min.js"></script>
 
 	</body>
 </html>
