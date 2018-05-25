@@ -62,9 +62,6 @@
 					- <strong>getValueAt</strong><br/>
 					Returnerer objektetene som skal bli vist i de forskjellige radene og kolonnene.
 				</p>
-				<p>
-					<br/><br/><a href="img/sam.jpg" target="_blank"><img class="resize" src="img/sam.jpg" alt="Tha king!"></a>
-				</p>
 			</section>
 
 			<section>
@@ -72,6 +69,7 @@
 				<p>
 					Utover de tre operasjonene vi alltid må implementere i AbstractTableModel kan vi benytte oss av mer funksjonalitet ved å overstyre standardimplementering av følgende operasjoner
 				</p>
+				<a href="diagrammer/ansatt-app-model.svg"><img src="diagrammer/ansatt-app-model.svg" alt="Klassediagram"></a>
 				<p>
 					- <strong>getColumnClass</strong><br/>
 					Brukes for å sette datatyper for kolonner i modellen. Dette kan vi bruke til å sette restriksjoner på hva brukeren kan taste inn i felt hvis det er meningen at man skal kunne endre eller sette nye verdier fra tabellen. F.eks går det ikke an å sette inn en stringverdi i int eller double felt i java eksempelet vedlagt i oppgaven<br/>
@@ -84,16 +82,16 @@
 				</p>
 			</section>
 
-			
 			<section>
 				<h1 id="sekvensdiagram">Sekvensdiagram</h1>
-				  <br/><br/><a href="diagrammer/Sequense Diagram.svg"><img src="img/Sequense Diagram.png" alt="Sekvensdiagram"></a>
+				<a href="diagrammer/Sequence_Diagram.svg"><img src="diagrammer/Sequence_Diagram.svg" alt="Sekvensdiagram"></a>
 				<p>
-				         Dette diagramet er et sekvensdiagram som viser hvordan JTable kaller på de to abstrakte metodene(getRowCount(),getColumnCount()). Disse metodene skal finne indexene for eksisterende antall rader og kolonner. Deretter kaller JTable på den siste abstrakte metoden der verdiene fra columnindex og rowindex blir puttet inn i getValueAt-metoden. getValue vil da returnere med objektet fra den spesifiserte cellen.
+								 Dette diagramet er et sekvensdiagram som viser hvordan JTable kaller på de to abstrakte metodene(getRowCount(),getColumnCount()).
+								 Disse metodene skal finne indexene for eksisterende antall rader og kolonner. Deretter kaller JTable på den siste abstrakte metoden der verdiene fra columnindex og rowindex blir puttet inn i getValueAt-metoden.
+								 getValue vil da returnere med objektet fra den spesifiserte cellen.
 				</p>
-		       </section>
-				
-				
+			</section>
+
 				<footer>
 				<div>
 					<a href="#top">Til toppen</a>
