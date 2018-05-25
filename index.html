@@ -51,10 +51,11 @@
 					AbstractTableModel er en abstrakt klasse. Denne abstrakte klassen gir standard implementeringer for de fleste av operasjonene i TableModel grensesnittet.
 					Det tar hånd om styringen av Listeners og gjør det lettere å generere TableModelEvents og sende dem til Listeners.
 				</p>
+				<a href="diagrammer/ClassDiagram.svg"><img src="diagrammer/ClassDiagram.svg" alt="Klassediagram"></a>
 				<p>
 					AbstractTableModel klassen er abstrakt fordi den implementerer TableModel grensesnittet, men den oppfyller ikke hele kontrakten.
 					Swing Rammeverket baserer seg på kontrakter som sender meldinger når data er klare. Tre av operasjonene er abstrakte, og må fylles for å fullføre kontrakten.
-					De tre operasjonene vi alltid må implementere når vi utvider AbstractTableModel klassen er: getRowCount(), getColumnCount(), og getValueAt().<br/><br/>
+					De tre operasjonene vi alltid må implementere når vi utvider AbstractTableModel klassen er: getRowCount, getColumnCount, og getValueAt.<br/><br/>
 					- <strong>getRowCount</strong><br/>
 					Returnerer antall rader i tabellen<br/>
 					- <strong>getColumnCount</strong><br/>
@@ -69,7 +70,6 @@
 				<p>
 					Utover de tre operasjonene vi alltid må implementere i AbstractTableModel kan vi benytte oss av mer funksjonalitet ved å overstyre standardimplementering av følgende operasjoner
 				</p>
-				<a href="diagrammer/ansatt-app-model.svg"><img src="diagrammer/ansatt-app-model.svg" alt="Klassediagram"></a>
 				<p>
 					- <strong>getColumnClass</strong><br/>
 					Brukes for å sette datatyper for kolonner i modellen. Dette kan vi bruke til å sette restriksjoner på hva brukeren kan taste inn i felt hvis det er meningen at man skal kunne endre eller sette nye verdier fra tabellen. F.eks går det ikke an å sette inn en stringverdi i int eller double felt i java eksempelet vedlagt i oppgaven<br/>
